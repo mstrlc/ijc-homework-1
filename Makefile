@@ -2,10 +2,10 @@
 # Autor: Matyáš Strelec, FIT
 
 CC = gcc
-CFLAGS = -g -std=c11 -pedantic -Wall -Wextra -O2 -fsanitize=address
+CFLAGS = -g -std=c11 -pedantic -Wall -Wextra -O2 
 
 .PHONY:
-	clean pack all run
+	clean zip all run
 
 all: primes primes-i steg-decode
 
@@ -37,5 +37,5 @@ run: primes primes-i
 clean:
 	rm *.o primes primes-i steg-decode xstrel03.zip
 
-pack:
+zip:
 	zip xstrel03.zip *.h *.c Makefile

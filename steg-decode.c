@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     bitset_alloc(bitset, imagesize);
     Eratosthenes(bitset);
 
-    char print_byte;
+    char print_byte = 0;
     int shift = 0;
     bool correctly_ended = false;
 
@@ -47,13 +47,14 @@ int main(int argc, char *argv[])
 
             if (shift == CHAR_BIT) // Full byte has been filled and is ready to print
             {
-                printf("%c", print_byte);
-
                 if (print_byte == '\0')
                 {   
+                    printf("\n");
                     correctly_ended = true;
                     break;
                 }
+
+                printf("%c", print_byte);
 
                 print_byte = '\0';  // Reset the printed byte to be 0 again
                 shift = 0;          // Reset the shift
