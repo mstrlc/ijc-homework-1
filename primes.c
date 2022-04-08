@@ -20,15 +20,13 @@ int main() {
     unsigned long primes_to_print[10] = {0, };
     int primes_index = 0;
 
-    for (bitset_index_t i = N - 1; i > 0 && primes_index < 10; i--)
-    {
-        if (bitset_getbit(bitset, i) == 0)
-        {
+    for (unsigned long i = 0; i < N; i++) {
+        if (bitset_getbit(bitset, i)) {
             primes_to_print[primes_index] = i;
             primes_index++;
         }
     }
-    
+
     for(int i = 9; i >= 0; i--)
     {
         printf("%lu\n", primes_to_print[i]);
